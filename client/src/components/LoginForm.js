@@ -4,7 +4,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
 
-import { useMutaion } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/react-hooks';
 import { LOGIN_USER } from '../utils/mutations';
 
 const LoginForm = () => {
@@ -31,7 +31,7 @@ const LoginForm = () => {
 
     try {
       const { data } = await login({
-        variables: { ...userformState }
+        variables: { ...userFormData }
       });
 
       Auth.login(data.login.token);
@@ -39,7 +39,7 @@ const LoginForm = () => {
       console.error(e);
     }
     // clear form values
-    setUserFormState({
+    setUserFormData({
       email: '',
       password: '',
     });
