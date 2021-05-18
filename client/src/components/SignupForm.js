@@ -3,7 +3,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
 
-import { useMutaion } from '@apollo/react-hooks';
+//import { useMutaion } from '@apollo/react-hooks';
 import { ADD_USER } from '../utils/mutations';
 
 const SignupForm = () => {
@@ -36,6 +36,7 @@ const SignupForm = () => {
       Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
+      setShowAlert(true);
     }
   
     setUserFormData({

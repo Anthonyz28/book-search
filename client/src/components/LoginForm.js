@@ -37,9 +37,11 @@ const LoginForm = () => {
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
+      setShowAlert(true);
     }
     // clear form values
     setUserFormData({
+      username: '',
       email: '',
       password: '',
     });
